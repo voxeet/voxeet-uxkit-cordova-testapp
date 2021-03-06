@@ -1,0 +1,30 @@
+{
+  "name": "com.voxeet.cordova.testapp",
+  "displayName": "Voxeet's Cordova TestApp",
+  "version": "1.0.0",
+  "description": "A sample Apache Cordova application that integrates the cordova-plugin-voxeet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Voxeet",
+  "license": "MIT",
+  "devDependencies": {
+    "cordova-plugin-androidx": "^3.0.0",
+    "cordova-plugin-androidx-adapter": "^1.1.3",
+    "cordova-plugin-voxeet": "^1.5.2",
+    "cordova-plugin-whitelist": "^1.3.4"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-voxeet": {},
+      "cordova-plugin-androidx": {},
+      "cordova-plugin-androidx-adapter": {}
+    },
+    "platforms": []
+  }
+}
