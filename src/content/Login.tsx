@@ -29,7 +29,7 @@ class Login extends Component<Props> {
 
   onLogin = async () => {
     try {
-      await this.sdk.initialize("", "");
+      await this.sdk.initialize("APPID", "APPSECRET");
       await this.sdk.connect(new UserInfo("", "", ""));
       alert("logged");
     } catch(e) {

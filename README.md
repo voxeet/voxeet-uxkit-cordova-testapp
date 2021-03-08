@@ -24,6 +24,8 @@ The test app is providing an appId/appSecret by default implementation. Edit the
 </widget>
 ```
 
+Update as well the `src/content/Login.tsx` file to put your keys in the initialize method.
+
 ## Add the platforms
 
 ```
