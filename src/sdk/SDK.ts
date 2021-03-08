@@ -254,6 +254,8 @@ declare class VoxeetSDK {
     onAccessTokenKo(errorMessage: string): Promise<unknown>;
 }
 
+export const UserInfoClass: typeof UserInfo = (window as any).UserInfo;
+
 export default (): VoxeetSDK => {
     return VoxeetSDK as any;
 }

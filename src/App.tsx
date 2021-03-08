@@ -1,12 +1,23 @@
 import React, { Component } from 'react'
-import VoxeetSDK from "./SDK"; //wrapper for the VoxeetSDK global variable created by cordova
+import { withStyles } from '@material-ui/core/styles';
+import Login from "./Login";
+import { Container } from '@material-ui/core';
 
-export default class App extends Component {
-  sdk = VoxeetSDK();
+const styles = {
+};
 
+interface Props {
+  classes: any
+}
+
+class App extends Component<Props> {
   render() {
-    return <div style={{ display: 'flex', justifyContent: 'center' }}>
-      React + typescript
-    </div>
+    const { classes } = this.props;
+    return (
+    <Container>
+      <Login />
+    </Container>);
   }
 }
+
+export default withStyles(styles)(App);
