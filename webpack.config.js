@@ -1,18 +1,23 @@
 const path = require('path')
 
 module.exports = {
+  entry: './src/index.tsx',
   mode: 'development',
-  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'www'),
     filename: 'index.bundle.js'
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.tsx', '.ts', '.js', '.jsx']
   },
   devtool: 'inline-source-map',
   module: {
-    rules: [
+  rules: [
+      {
+        test: /\.(tsx|ts)?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
