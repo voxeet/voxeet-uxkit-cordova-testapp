@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles';
-import Login from "./Login";
+import Login from "./content/Login";
 import { Container } from '@material-ui/core';
 
 const styles = {

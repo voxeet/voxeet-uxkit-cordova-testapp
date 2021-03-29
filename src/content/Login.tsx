@@ -8,6 +8,8 @@ import CardActions from '@material-ui/core/CardActions';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 
+import Config from "../sdk/Config";
+
 const styles = {
   title: {
     fontSize: 14,
@@ -25,16 +27,42 @@ interface Props {
 
 
 class Login extends Component<Props> {
-  sdk = VoxeetSDK();
+  private sdk = VoxeetSDK();
+  private participantName = "";
+  private externalId = "";
+  private initialized = false;
 
-  onLogin = async () => {
+  componentDidMount() {
+    this.initialize();
+  }
+
+  private initialize = async () => {
     try {
-      await this.sdk.initialize("APPID", "APPSECRET");
-      await this.sdk.connect(new UserInfo("", "", ""));
+      if(this.initialized) return;
+      await this.sdk.initialize(Config.APP_ID, Config.APP_SECRET);
+    } catch(e) {
+      alert(e);
+      //initialize even in case of error
+    }
+    this.initialized = true;
+  }
+
+  private onLogin = async () => {
+    try {
+      await this.initialize();
+      await this.sdk.connect(new UserInfo(this.externalId, this.participantName, null));
       alert("logged");
     } catch(e) {
       alert(e);
     }
+  }
+
+  private onParticipantName = (event: React.ChangeEvent<HTMLTextAreaElement|HTMLInputElement>) => {
+    this.participantName = event.target.value;
+  }
+
+  private onExternalId = (event: React.ChangeEvent<HTMLTextAreaElement|HTMLInputElement>) => {
+    this.externalId = event.target.value;
   }
 
   render() {
@@ -46,11 +74,11 @@ class Login extends Component<Props> {
             Create a session
           </Typography>
 
-          <TextField id="name" type="text" helperText="Participant Name" />
+          <TextField onChange={this.onExternalId} id="name" type="text" helperText="Participant Name" />
         </CardContent>
 
         <CardContent>
-          <TextField id="externalId" type="text" helperText="External ID" />
+          <TextField onChange={this.onExternalId} id="externalId" type="text" helperText="External ID" />
         </CardContent>
 
         <CardActions>
