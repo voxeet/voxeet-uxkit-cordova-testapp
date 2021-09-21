@@ -1,4 +1,4 @@
-# Dolby Interactivity APIs Cordova plugin TestApp app
+# Dolby.io Communications APIs Cordova plugin TestApp app
 
 _WIP this is scheduled to be implemented by the 15th of March 2021_
 
