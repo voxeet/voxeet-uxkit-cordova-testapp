@@ -74,7 +74,7 @@ class Login extends Component<Props> {
             Create a session
           </Typography>
 
-          <TextField onChange={this.onExternalId} id="name" type="text" helperText="Participant Name" />
+          <TextField onChange={this.onParticipantName} id="name" type="text" helperText="Participant Name" />
         </CardContent>
 
         <CardContent>
