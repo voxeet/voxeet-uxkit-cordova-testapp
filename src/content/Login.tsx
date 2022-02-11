@@ -7,17 +7,9 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
+import { default_styles } from './styles';
 
 import Config from "../sdk/Config";
-
-const styles = {
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-};
 
 declare const UserInfo: typeof UserInfoClass;
 
@@ -90,4 +82,4 @@ class Login extends Component<Props> {
   }
 }
 
-export default withStyles(styles)(Login);
+export default withStyles(default_styles)(Login);

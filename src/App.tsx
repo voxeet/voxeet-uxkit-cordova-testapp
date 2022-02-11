@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles';
-import Login from "./content/Login";
+import { Login, Invite, Join } from "./content";
 import { Container } from '@material-ui/core';
 
 const styles = {
@@ -12,10 +12,11 @@ interface Props {
 
 class App extends Component<Props> {
   render() {
-    const { classes } = this.props;
     return (
     <Container>
       <Login />
+      <Join />
+      <Invite />
     </Container>);
   }
 }
