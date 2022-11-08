@@ -14,7 +14,7 @@ npm install
 
 ## Pre-platform configuration
 
-The test app is providing an appId/appSecret by default implementation. Edit the `config.xml` file to add the keys in place of the CHANGEME values
+The test app is providing an appId/appSecret by default implementation. Edit the `config.xml` file to add the keys in place of the CHANGEME values (this will be removed in future version as the apps will then ask developers to have JS's initializeToken only)
 ```
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.example.hello" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
@@ -29,8 +29,15 @@ Update as well the `src/content/Login.tsx` file to put your keys in the initiali
 ## Add the platforms
 
 ```
-cordova platform add android
+cordova platform add android@latest
 
 # optional, add iOS platform on MacOS environment
 cordova platform add ios
+```
+
+## Add a specific version of the cordova plugin
+
+```
+cordova plugin rm cordova-plugin-voxeet
+cordova plugin add "https://github.com/voxeet/voxeet-uxkit-cordova#some_branch_or_some_commit_or_tags"
 ```

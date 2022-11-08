@@ -34,7 +34,7 @@
     <preference name="VOXEET_CORDOVA_CONSUMER_SECRET" value="CHANGEME"/>
 
     <preference name="android-minSdkVersion" value="21" />
-    <preference name="android-targetSdkVersion" value="31" />
+    <preference name="android-targetSdkVersion" value="32" />
     <preference name="AndroidGradlePluginVersion" value="7.0.4" />
-    <preference name="android-buildToolsVersion" value="31.0.0" />
+    <preference name="android-buildToolsVersion" value="32.0.0" />
 </widget>
